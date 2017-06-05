@@ -3,7 +3,11 @@ package cn.celloud.kafka08.djt;
 import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
 import kafka.message.MessageAndMetadata;
-
+/**
+ * djt--大讲台
+ * @author Administrator
+ *
+ */
 public class ConsumerMsgDjt implements Runnable {
 	private KafkaStream<byte[], byte[]> kafkaStream;
 	private int threadNum;

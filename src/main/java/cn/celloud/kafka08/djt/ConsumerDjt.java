@@ -11,7 +11,11 @@ import kafka.consumer.Consumer;
 import kafka.consumer.ConsumerConfig;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
-
+/**
+ * djt--大讲台
+ * @author Administrator
+ *
+ */
 public class ConsumerDjt {
 	public static void main(String[] args) {
 		//1.读取一个消费者组的配置文件信息（如果有多个消费者组，需要读取多个配置文件）

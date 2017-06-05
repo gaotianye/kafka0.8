@@ -6,7 +6,11 @@ import java.util.Properties;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
-
+/**
+ * djt--大讲台
+ * @author Administrator
+ *
+ */
 public class ProducerDjt {
 	public static void main(String[] args) {
 		//1.读取配置文件信息
