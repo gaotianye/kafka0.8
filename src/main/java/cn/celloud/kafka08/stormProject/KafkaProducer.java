@@ -17,8 +17,8 @@ public class KafkaProducer extends Thread{
 	private final Properties props = new Properties();
 	
 	public KafkaProducer(String topic){
-		props.put("metadata.broker.list", "master:9092,slave1:9092,slave2:9092");
-		props.put("serializer.class", "kafka.serializer.StringEncoder");
+		props.put("metadata.broker.list", Constant.KAFKA_CONNECT);
+		props.put("serializer.class", Constant.SERIALIZER_CLASS);
 		producer = new Producer<Integer, String>(new ProducerConfig(props));
 		this.topic = topic;
 	}
