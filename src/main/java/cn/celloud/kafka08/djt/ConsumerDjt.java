@@ -36,7 +36,7 @@ public class ConsumerDjt {
 		//4.获取消费者流list对象（此消费者组中的 消费者对象  去获取topic中的信息）
 		//注意1:messageStreams的key指topic，value是一个list
 		//注意2:KafkaStream<byte[], byte[]> 中的key和value指的是消息的key 和消息的value
-		//注意3:list元素的个数代表着几个消费者线程
+		//注意3:list元素的个数代表着几个消费者线程,此时应该是有5个消费者线程
 		Map<String, List<KafkaStream<byte[], byte[]>>> messageStreams = consumerConn.createMessageStreams(topicConnMap);
 		List<KafkaStream<byte[], byte[]>> MsgList = messageStreams.get(topic);
 		int threadNum = 0;
