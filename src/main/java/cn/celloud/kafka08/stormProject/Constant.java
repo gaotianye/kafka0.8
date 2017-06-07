@@ -7,4 +7,6 @@ public class Constant {
 	static final String KAFKA_CONNECT = "master:9092,slave1:9092,slave2:9092";
 	//serializer_class
 	static final String SERIALIZER_CLASS = "kafka.serializer.StringEncoder";
+	//num.partitions
+	static final String NUM_PARTITIONS = "3";
 }
