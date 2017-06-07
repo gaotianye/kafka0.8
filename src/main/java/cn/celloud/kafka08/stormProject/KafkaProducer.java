@@ -19,6 +19,7 @@ public class KafkaProducer extends Thread{
 	public KafkaProducer(String topic){
 		props.put("metadata.broker.list", Constant.KAFKA_CONNECT);
 		props.put("serializer.class", Constant.SERIALIZER_CLASS);
+		props.put("num.partitions", Constant.NUM_PARTITIONS);
 		producer = new Producer<Integer, String>(new ProducerConfig(props));
 		this.topic = topic;
 	}
@@ -34,6 +35,9 @@ public class KafkaProducer extends Thread{
 		int i = 0;
 		
 		while(true){
+//			if(i==10){
+//				break;
+//			}
 			i++;
 			String messageStr = i+"\t"+order_amt[random.nextInt(12)]+"\t"+
 							DateUtils.formatTime(new Date())+"\t"+area_id[random.nextInt(5)];
