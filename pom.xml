@@ -27,7 +27,7 @@
 			<version>0.8.2.2</version>
 		</dependency>
 	</dependencies>
-		<build>
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -35,7 +35,7 @@
 					<archive>
 						<manifest>
 							<!--这里要替换成jar包main方法所在类 -->
-							<mainClass>cn.celloud.kafka08.djt.ConsumerDjt</mainClass>
+							<mainClass>cn.celloud.kafka08.stormProject.KafkaProducer</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
