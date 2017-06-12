@@ -34,7 +34,8 @@ public class ConsumerDemo {
 		Map<String, List<KafkaStream<byte[], byte[]>>> messageStreams = consumerConn.createMessageStreams(topicConnMap);
 		List<KafkaStream<byte[], byte[]>> MsgList = messageStreams.get(topic);
 		for (KafkaStream<byte[], byte[]> kafkaStream : MsgList) {
-			//如果数据一直有，第二个迭代就永远不会进来的。所以需要启动多个线程。
+			//如果数据一直有，第二个迭代就永远不会进来的（即：第二个消费者线程就永远不会执行）。
+			//所以需要启动多个线程，即：有几个消费者线程，就启动几个线程来消费。
 			new Thread(new ConsumerMsg(kafkaStream)).start();
 		}
 	}
