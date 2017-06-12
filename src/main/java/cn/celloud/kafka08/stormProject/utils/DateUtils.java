@@ -15,6 +15,8 @@ public class DateUtils {
 			new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public static final SimpleDateFormat DATE_FORMAT = 
 			new SimpleDateFormat("yyyy-MM-dd");
+	public static final SimpleDateFormat DATE_FORMAT_2 = 
+			new SimpleDateFormat("yyyyMMdd");
 	
 	/**
 	 * 判断一个时间是否在另一个时间之前
@@ -87,15 +89,7 @@ public class DateUtils {
 		String hour = hourMinuteSecond.split(":")[0];
 		return date + "_" + hour;
 	}  
-	
-	/**
-	 * 获取当天日期（yyyy-MM-dd）
-	 * @return 当天日期
-	 */
-	public static String getTodayDate() {
-		return DATE_FORMAT.format(new Date());  
-	}
-	
+
 	/**
 	 * 获取昨天的日期（yyyy-MM-dd）
 	 * @return 昨天的日期
@@ -111,12 +105,35 @@ public class DateUtils {
 	}
 	
 	/**
+	 * 获取昨天的日期（yyyyMMdd）
+	 * @return 昨天的日期
+	 */
+	public static String getYesterdayDate2() {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());  
+		cal.add(Calendar.DAY_OF_YEAR, -1);  
+		
+		Date date = cal.getTime();
+		
+		return DATE_FORMAT_2.format(date);
+	}
+	
+	/**
 	 * 格式化日期（yyyy-MM-dd）
 	 * @param date Date对象
 	 * @return 格式化后的日期
 	 */
 	public static String formatDate(Date date) {
 		return DATE_FORMAT.format(date);
+	}
+	
+	/**
+	 * 格式化日期（yyyyMMdd）
+	 * @param date Date对象
+	 * @return 格式化后的日期
+	 */
+	public static String formatDate2(Date date) {
+		return DATE_FORMAT_2.format(date);
 	}
 	
 	/**
