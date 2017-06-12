@@ -53,7 +53,8 @@ public class KafkaAreaProducer extends Thread{
 	}
 	
 	public static void main(String[] args) {
-		KafkaAreaProducer producerThread = new KafkaAreaProducer(Constant.TOPIC);
+		String topic =  Constant.ORDER_TOPIC;
+		KafkaAreaProducer producerThread = new KafkaAreaProducer(topic);
 		producerThread.start();
 	}
 }
