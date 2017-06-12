@@ -35,7 +35,7 @@
 					<archive>
 						<manifest>
 							<!--这里要替换成jar包main方法所在类 -->
-							<mainClass>cn.celloud.kafka08.stormProject.KafkaProducer</mainClass>
+							<mainClass>cn.celloud.kafka08.stormProject.KafkaAreaProducer</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
